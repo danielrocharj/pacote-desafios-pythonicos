@@ -15,6 +15,7 @@ def match_ends(words):
         if len(word) >= 2 and word[0] == word[-1]:
             count += 1
     return count
+    # return sum([(len(w) >= 2 and w[0] == w[-1]) for w in words])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---

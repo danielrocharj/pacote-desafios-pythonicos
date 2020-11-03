@@ -13,7 +13,9 @@ antes de combina-las.
 
 def front_x(words):
     # +++ SUA SOLUÇÃO +++
-    return
+    com_x_comecando = [x for x in words if x[0] == 'x']
+    sem_x_comecando = [w for w in words if w[0] != 'x']
+    return sorted(com_x_comecando) + sorted(sem_x_comecando)
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
