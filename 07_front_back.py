@@ -10,9 +10,19 @@ Exemplo: 'abcde', a metade da frente é 'abc' e a de trás é 'de'.
 Finalmente, dadas duas strings a e b, retorne uma string na forma:
 a-frente + b-frente + a-trás + b-trás
 """
+
+
+def split_word(s):
+    from math import ceil
+    knife = ceil(len(s)/2)
+    return [s[0:knife], s[knife:]]
+
+
 def front_back(a, b):
     # +++ SUA SOLUÇÃO +++
-    return
+    splited_a = split_word(a)
+    splited_b = split_word(b)
+    return ''.join([splited_a[0], splited_b[0], splited_a[1], splited_b[1]])
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
