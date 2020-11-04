@@ -9,10 +9,16 @@ Irá retornar: [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 
 Dica: Use uma custom key= function para extrair o ultimo elemento de cada tupla.
 """
+# def bubble_sort_last(tuples):
+#     for i in range(0, len(tuples)):
+#         for j in range(0, len(tuples) - i - 1):
+#             if tuples[j][1] > tuples[j + 1][1]:
+#                 tuples[j + 1], tuples[j] = tuples[j], tuples[j + 1]
+#     return tuples
+
 def sort_last(tuples):
     # +++ SUA SOLUÇÃO +++
-    return
-
+    return sorted(tuples, key=lambda a: a[1])
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
