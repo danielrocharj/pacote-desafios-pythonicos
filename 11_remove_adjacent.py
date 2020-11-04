@@ -10,7 +10,12 @@ Irá retornar: [1, 2, 3]
 
 def remove_adjacent(nums):
     # +++ SUA SOLUÇÃO +++
-    return
+    result = []
+    from itertools import zip_longest, islice
+    for f, s in zip_longest(nums, islice(nums, 1, None)):
+        if f != s:
+            result.append(f)
+    return result
 
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
@@ -38,3 +43,5 @@ if __name__ == '__main__':
     test(remove_adjacent, [2, 2, 3, 3, 3], [2, 3])
     test(remove_adjacent, [], [])
     test(remove_adjacent, [2, 2, 3, 3, 3, 2, 2], [2, 3, 2])
+    test(remove_adjacent, [1,2,3,4,5], [1,2,3,4,5])
+
