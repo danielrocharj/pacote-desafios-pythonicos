@@ -9,10 +9,23 @@ A sua solução deve rodar em tempo linear, ou seja, deve fazer uma
 única passagem em cada uma das listas.
 """
 
+
 def linear_merge(list1, list2):
     # +++ SUA SOLUÇÃO +++
-    return
+    from heapq import merge
+    return list(merge(list1, list2))
 
+# def linear_merge(list1, list2):
+#     merged_list = []
+#     list1_copy, list2_copy = list1.copy(), list2.copy()
+#     while len(list1_copy) > 0 and len(list2_copy) > 0:
+#         if list1_copy[-1] > list2_copy[-1]:
+#             merged_list.append(list1_copy.pop(-1))
+#         else:
+#             merged_list.append(list2_copy.pop(-1))
+#     merged_list.extend(list1_copy)
+#     merged_list.extend(list2_copy)
+#     return merged_list[::-1]
 
 # --- Daqui para baixo são apenas códigos auxiliáries de teste. ---
 
