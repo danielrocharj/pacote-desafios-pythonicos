@@ -56,6 +56,30 @@ import sys
 
 # +++ SUA SOLUÇÃO +++
 # Defina as funções print_words(filename) e print_top(filename).
+def read_file(filename):
+    f = open(filename, "r")
+    lista = f.read().split()
+    f.close()
+    return [item.lower() for item in lista]
+
+def words_count(filename):
+    letras = read_file(filename)
+    letras_unicas = set(letras)
+    contagem = [letras.count(item) for item in letras_unicas]
+    return list(zip(letras_unicas, contagem))
+
+
+def print_words(filename):
+    resultado_contagem = words_count(filename)
+    for letra, contagem in sorted(resultado_contagem):
+        print(letra, contagem)
+
+
+def print_top(filename):
+    resultado_contagem = words_count(filename)
+    maiores_quantidades = sorted(resultado_contagem, key=lambda a: a[1], reverse=True)
+    for letra, contagem in maiores_quantidades[:20]:
+        print(letra, contagem)
 
 
 # A função abaixo chama print_words() ou print_top() de acordo com os
